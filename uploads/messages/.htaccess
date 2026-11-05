@@ -1,0 +1,2 @@
+# Chat attachments are served through download.php after an access check
+Require all denied

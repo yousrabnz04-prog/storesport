@@ -1,0 +1,39 @@
+# Secrets and local configuration
+.env
+.env.*
+config/config.php
+*.pem
+*.key
+
+# User-generated content (folders are kept through .gitkeep / .htaccess)
+uploads/products/*
+uploads/messages/*
+!uploads/products/.gitkeep
+!uploads/messages/.gitkeep
+!uploads/messages/.htaccess
+
+# Database dumps and backups (schema.sql and seed.sql stay tracked)
+*.sql.gz
+*.dump
+*.bak
+backup*.sql
+dump*.sql
+
+# Dependencies and tooling
+/vendor/
+node_modules/
+.phpunit.result.cache
+.php-cs-fixer.cache
+
+# Logs and temporary files
+*.log
+error_log
+tmp/
+
+# Editors and OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db

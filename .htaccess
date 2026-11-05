@@ -1,0 +1,15 @@
+# Disable directory listing
+Options -Indexes
+
+# Block hidden files and non-public file types
+<FilesMatch "^\.(?!well-known)|\.(sql|md|log|ini|sh|lock|dist)$|^composer\.(json|lock)$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:; frame-ancestors 'self'; form-action 'self'; base-uri 'self'"
+</IfModule>
